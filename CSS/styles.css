@@ -1,0 +1,17 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: black;
+}
+
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: grey;
+    box-shadow: 0 2px 0 rgb(0 0 0 / 40%);
+}
