@@ -32,6 +32,7 @@ body {
     width: 100%;
     background: #3a3d40;
     box-shadow: 0 2px 0 rgb(0 0 0 / 40%);
+    border-bottom: 1px solid black;
 }
 
 .navigation-list {
@@ -45,9 +46,9 @@ body {
     padding: 2rem;
 }
 
-.navigation-list :hover {
+/* .navigation-list :hover {
     background-color: black;
-}
+} */
 
 .navigation-list a {
     display: block;
@@ -132,6 +133,7 @@ p {
     max-width: 640px;
     margin: 0 auto 6rem auto;
     border-bottom: 0.2rem solid white;
+    padding-top: 20px;
 }
 
 .skills-grid {
@@ -197,4 +199,14 @@ p {
 i {
     width: 100px;
     height: 100px;
+}
+
+/* Footer */
+footer {
+    font-weight: 300;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem;
+    background: #3a3d40;
+    border-top: 4px solid white;
 }
