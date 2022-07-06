@@ -86,10 +86,12 @@ li {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* If content over reaches sections or divs simply use fit-content... */
     width: fit-content;
     height: fit-content;
     background-color: black;
     background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+    padding-top: 100px;
 }
 
 h1 {
@@ -97,6 +99,7 @@ h1 {
     display: block;
     margin-inline-start: 0;
     margin-inline-end: 0;
+    padding-top: 20px;
 }
 
 h2 {
