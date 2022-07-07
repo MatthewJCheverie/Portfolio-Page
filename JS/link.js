@@ -1,6 +1,7 @@
 var sites = [
     "https://matthewjcheverie.github.io/Landing-Page/",
     "https://matthewjcheverie.github.io/Portfolio-Page/",
+    "https://matthewjcheverie.github.io/Survey-Form/",
 ];
 
 function randomSite() {
