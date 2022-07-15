@@ -130,17 +130,26 @@ p {
 }
 
 /* Projects */
-.project-grid { 
-    display: grid;
+.project-grid {
+    /* display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
-    align-items: stretch;
-    }
+    align-items: stretch; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    width: 100%;
+    justify-content: space-evenly;
+}
 
 .projects-image {
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    /* box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
     max-width: 100%;
+    padding: 50px;
+    margin: 25px; */
+
+    height: 500px;
+    width: 500px;
 }
 
 /* Skills */
