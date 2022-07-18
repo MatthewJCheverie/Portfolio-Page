@@ -9,47 +9,65 @@
     <script src="https://kit.fontawesome.com/ec01b1e77c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <script src="JS/link.js"></script>
 </head>
 <body>
-    <!-- Navigation -->
-    <!-- TODO: make hover BGs full not partial -->
-    <!-- Wrap in header tag my name will be header logo similar to how it is in the landing page -->
-    <nav class="navigation">
-        <ul class="navigation-list">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <!-- Navigation // Header-->
+    <!-- TODO: make navigation sticky VIA JS -->
+    <header>
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    Matthew Cheverie
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#project">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
 
-    <!-- About -->
-    <section id="about" class="about">
-        <h1>Matthew Cheverie</h1>
-        <p>I first got into programming in 2013 after taking Introduction to Web Development in high school that followed a curriculum similar to CodeAcademy. Sometime after, I had also watched The Social Network which furthered my interests in computer science. Unfortunately (or fortunately) I didn’t make another Facebook but what I have gained is a love and appreciation for learning and applying computer technologies.</p>
-        <p>Since 2013, I have continued to learn about computers and focus specifically on programming. I would go on to attend and graduate Massasoit Community College with an Associates in Computer Science. During my time at Massasoit, I took a plethora of classes to help me advance in my career:</p>
-        <ul>
-            <li>Introduction to Java</li>
-            <li>Advanced Java</li>
-            <li>Data Structures and Algorithms in Java</li>
-            <li>Computer Architecture</li>
-        </ul>
-        <p>After Massasoit, I briefly attended BSU for a semester in 2021 while also working at their IT Help Desk. While there, although only briefly, I was able to advance my knowledge by taking additional computer courses:</p>
-        <ul>
-            <li>Operating Systems</li>
-            <li>Software Engineering</li>
-            <li>Analysis of Algorithms</li>
-            <li>Logic and Computers</li>
-        </ul>
-        <p></p>
-        <p>My academic journey has come to a halt learning never stops.</p>
-        <p>Now, at age 24, I am mostly seeking to focus on front end skills through resourceful (and free) open source tools such as FreeCodeCamp, The Odin Project, and YouTube.</p>
-        <p>This summer, I landed an internship at Advanced Remarketing Services as a web intern where my primary roles are to maintain the wordpress sites, edit and create plugins using HTML, CSS and PHP and create and edit JSON-ld schemas.</p>
-    </section>
-    <!-- End About -->
+        <!-- JS Script to create sticky navigation so can have easy site navigation -->
+        <script>
+            window.onscroll = function() {myFunction()};
+            
+            var navbar = document.getElementById("navbar");
+            var sticky = navbar.offsetTop;
+            
+            function myFunction() {
+              if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+              } else {
+                navbar.classList.remove("sticky");
+              }
+            }
+            </script>
+    </header>
     
+        <!-- About -->
+        <!-- TODO: style list to match the paragraphs-->
+        <section id="about" class="about">
+            <p>I first got into programming in 2013 after taking Introduction to Web Development in high school that followed a curriculum similar to CodeAcademy. Sometime after, I had also watched The Social Network which furthered my interests in computer science. Unfortunately (or fortunately) I didn’t make another Facebook but what I have gained is a love and appreciation for learning and applying computer technologies. Since 2013, I have continued to learn about computers and focus specifically on programming. I would go on to attend and graduate Massasoit Community College with an Associates in Computer Science. During my time at Massasoit, I took a plethora of classes to help me advance in my career:</p>
+            <ul>
+                <li>Introduction to Java</li>
+                <li>Advanced Java</li>
+                <li>Data Structures and Algorithms in Java</li>
+                <li>Computer Architecture</li>
+            </ul>
+            <p>After Massasoit, I briefly attended BSU for a semester in 2021 while also working at their IT Help Desk. While there, although only briefly, I was able to advance my knowledge by taking additional computer courses:</p>
+            <ul>
+                <li>Operating Systems</li>
+                <li>Software Engineering</li>
+                <li>Analysis of Algorithms</li>
+                <li>Logic and Computers</li>
+            </ul>
+            <p></p>
+            <p class="last-about">My academic journey has come to a halt learning never stops. Now, at age 24, I am mostly seeking to focus on front end skills through resourceful (and free) open source tools such as FreeCodeCamp, The Odin Project, and YouTube. This summer, I landed an internship at Advanced Remarketing Services as a web intern where my primary roles are to maintain the wordpress sites, edit and create plugins using HTML, CSS and PHP and create and edit JSON-ld schemas.</p>
+        </section>
+    
+
     <!-- Projects -->
     <section id="project" class="project">
         <!-- Will have it sorted by langugaes will run small javascript script to create random links upon each click to showcase the different prjects -->
@@ -81,9 +99,6 @@
             <img class="skills-image" src="IMG/java-brands.svg" alt="java icon">
             <img class="skills-image" src="IMG/php-brands (1).svg" alt="php icon">
         </div>
-        
-        <!-- Create button that randomly pulls a link via javscript use all completed projects you have -->
-        <a href="#" onclick="randomSite();">Random Project</a>
     </section>
 
     <!-- Contact -->
