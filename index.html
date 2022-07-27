@@ -1,72 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matthew's Portfolio</title>
+    <meta name="author" content="Matthew Cheverie">
+    <meta name="description" content="Matthew Cheveries portfolio website written in HTML and CSS, the page contains about section detailing history with computewrs a project section and lastly a contact area allowing recruiters to hopefully gewt in touch">
     <link rel="stylesheet" href="CSS/styles.css">
     <script src="https://kit.fontawesome.com/ec01b1e77c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <script src="JS/sticky.js"></script>
 </head>
-<body>
+
+<body onscroll="myFunction()">
     <!-- Navigation // Header-->
     <!-- TODO: make navigation sticky VIA JS -->
     <header>
-        <nav class="navbar" id="navbar">
-            <div class="nav-container">
-                <div class="nav-logo">
-                    Matthew Cheverie
+        <nav id="navbar" class="navbar" onscroll="myFunction()">
+                <div class="logo_header">
+                    <img src="" alt="">
+                    <a href="#" class="logo">Matthew Cheverie</a>
+                    <button class="navbar_toggle">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
                 </div>
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#project">Projects</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                <ul class="main_nav">
+                    <li><a href="#about" class="nav_links">About</a></li>
+                    <li><a href="#project" class="nav_links">Projects</a></li>
+                    <li><a href="#contact" class="nav_links">Contact</a></li>
                 </ul>
-            </div>
         </nav>
 
         <!-- JS Script to create sticky navigation so can have easy site navigation -->
-        <script>
-            window.onscroll = function() {myFunction()};
-            
+        <!-- <script>
+            window.onscroll = function () { myFunction() };
+
             var navbar = document.getElementById("navbar");
             var sticky = navbar.offsetTop;
-            
+
             function myFunction() {
-              if (window.pageYOffset >= sticky) {
-                navbar.classList.add("sticky")
-              } else {
-                navbar.classList.remove("sticky");
-              }
+                if (window.pageYOffset >= sticky) {
+                    navbar.classList.add("sticky")
+                } else {
+                    navbar.classList.remove("sticky");
+                }
             }
-            </script>
+        </script> -->
+
+        <script src="JS/responsive-nav.js"></script>
     </header>
-    
-        <!-- About -->
-        <!-- TODO: style list to match the paragraphs-->
-        <section id="about" class="about">
-            <p>I first got into programming in 2013 after taking Introduction to Web Development in high school that followed a curriculum similar to CodeAcademy. Sometime after, I had also watched The Social Network which furthered my interests in computer science. Unfortunately (or fortunately) I didn’t make another Facebook but what I have gained is a love and appreciation for learning and applying computer technologies. Since 2013, I have continued to learn about computers and focus specifically on programming. I would go on to attend and graduate Massasoit Community College with an Associates in Computer Science. During my time at Massasoit, I took a plethora of classes to help me advance in my career:</p>
+
+    <!-- About -->
+    <!-- TODO: style list to match the paragraphs-->
+    <section id="about" class="about" id="about-container">
+        <h1>Matthew Cheverie</h1>
+        <p>I first got into programming in 2013 after a few classes in high school. SInce then i have continue to grow and learn on to complete my 
+            Associates as Massasoit Community College in Computer Science. Where i would take classes in:
+        </p>    
+            
             <ul>
                 <li>Introduction to Java</li>
                 <li>Advanced Java</li>
                 <li>Data Structures and Algorithms in Java</li>
                 <li>Computer Architecture</li>
             </ul>
-            <p>After Massasoit, I briefly attended BSU for a semester in 2021 while also working at their IT Help Desk. While there, although only briefly, I was able to advance my knowledge by taking additional computer courses:</p>
-            <ul>
-                <li>Operating Systems</li>
-                <li>Software Engineering</li>
-                <li>Analysis of Algorithms</li>
-                <li>Logic and Computers</li>
-            </ul>
-            <p></p>
-            <p class="last-about">My academic journey has come to a halt learning never stops. Now, at age 24, I am mostly seeking to focus on front end skills through resourceful (and free) open source tools such as FreeCodeCamp, The Odin Project, and YouTube. This summer, I landed an internship at Advanced Remarketing Services as a web intern where my primary roles are to maintain the wordpress sites, edit and create plugins using HTML, CSS and PHP and create and edit JSON-ld schemas.</p>
-        </section>
-    
+     
+        <p>
+            After Massasoit, I briefly attended BSU for a semester in 2021 while also working at their IT Help Desk.
+            While there, although only briefly, I was able to advance my knowledge by taking additional computer
+            courses:
+        </p>
+        <ul>
+            <li>Operating Systems</li>
+            <li>Software Engineering</li>
+            <li>Analysis of Algorithms</li>
+            <li>Logic and Computers</li>
+        </ul>
+        <p>Most recently i have been working as a web intern for Advanced Remarketing Service. Where my primariry roles have been to update or create 
+            JSON-LD Schemas for how-to and faq pages, maintain and uodate containt to match SEO criteria on three wordpress sites
+        </p>
+    </section>
+
 
     <!-- Projects -->
     <section id="project" class="project">
@@ -83,35 +100,56 @@
     </section>
     <!-- End Projects -->
 
-    <!-- Experience -->
-
-    <!-- End Experience -->
-
-    <!-- Skills -->
-    <section id="skills" class="skills">
-        <!-- Will have it sorted by langugaes will run small javascript script to create random links upon each click to showcase the different prjects -->
-        <h2 class="skills-header">Some of the skills i have used</h2>
-        <div class="skills-grid">
-            <img class="skills-image" src="IMG/html5-brands.svg" alt="html icon">
-            <img class="skills-image" src="IMG/css3-brands.svg" alt="css icon">
-            <img class="skills-image" src="IMG/js-brands.svg" alt="js icon">
-            <img class="skills-image" src="IMG/python-brands.svg" alt="python icon">
-            <img class="skills-image" src="IMG/java-brands.svg" alt="java icon">
-            <img class="skills-image" src="IMG/php-brands (1).svg" alt="php icon">
-        </div>
-    </section>
-
     <!-- Contact -->
+    <!-- TODO: Create a mock form just to showcase -->
     <section id="contact" class="contact">
-        <h2>Contact Me:</h2>
+        <!-- Form doesnt work but forms are important -->
+        <div class="container">
+            <form method="post">
+                <h2>Contact Me:</h2>
+              <p>Please know this form does not work icone links below do however work so do with that what you want but i just wanted to show a form man...</p>  
+              <div class="contact-links">
+                <a id="profile-link" href="https://github.com/MatthewJCheverie" target="_blank"
+                    class="btn contact-details"><i class="fa-brands fa-github"></i></a>
+                <a id="profile-link" href="https://www.linkedin.com/in/matthew-cheverie-b55231244/" target="_blank"
+                    class="btn contact-details"><i class="fa-brands fa-linkedin"> </i></a>
+                <a href="mailto:matthewjohncheverie@gmail.com" class="btn contact-details"><i
+                        class="fa-solid fa-at"></i></a>
+                <a href="tel:508-279-5966" class="btn contact-details"><i class="fa-solid fa-square-phone"></i></a>
+            </div>
+          
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="firstname" placeholder="Your name..">
+          
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+          
+              <label for="country">Hire Me?</label>
+              <select id="country" name="country">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                <option value="maybe">Maybe</option>
+              </select>
+          
+              <label for="subject">Suggestions you may have?</label>
+              <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+          
+              <input type="submit" value="Submit">
+              <input type="reset" value="Reset">
+            </form>
+          </div>
+
         <!-- Contact Links (Github, LinkedIn, Phone, Email) -->
-        <div class="contact-links">
-            <a id="profile-link" href="https://github.com/MatthewJCheverie" target="_blank" class="btn contact-details"><i class="fa-brands fa-github"></i></a>
-            <a id="profile-link" href="https://www.linkedin.com/in/matthew-cheverie-b55231244/" target="_blank" class="btn contact-details"><i class="fa-brands fa-linkedin">  </i></a>
-            <a href="mailto:matthewjohncheverie@gmail.com" class="btn contact-details"><i class="fa-solid fa-at"></i></a>
-            <a href="tel:508-279-5966" class="btn contact-details"><i class="fa-solid fa-square-phone"></i></a> 
-        </div>
-         </section>
+        <!-- <div class="contact-links">
+            <a id="profile-link" href="https://github.com/MatthewJCheverie" target="_blank"
+                class="btn contact-details"><i class="fa-brands fa-github"></i></a>
+            <a id="profile-link" href="https://www.linkedin.com/in/matthew-cheverie-b55231244/" target="_blank"
+                class="btn contact-details"><i class="fa-brands fa-linkedin"> </i></a>
+            <a href="mailto:matthewjohncheverie@gmail.com" class="btn contact-details"><i
+                    class="fa-solid fa-at"></i></a>
+            <a href="tel:508-279-5966" class="btn contact-details"><i class="fa-solid fa-square-phone"></i></a>
+        </div> -->
+    </section>
     <!-- End Contact -->
 
     <!-- Footer -->
@@ -120,4 +158,5 @@
     </footer>
     <!-- End Footer -->
 </body>
+
 </html>

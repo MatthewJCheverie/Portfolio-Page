@@ -1,107 +1,154 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-*::before,
-*::after {
-    box-sizing: inherit;
-}
-
-html {
-    box-sizing: border-box;
-    font-size: 60%;
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 400;
-    line-height: 1.4;
-    color: white;
-    display: block;
-}
-
-/* Navigation */
-.navbar .nav-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: fit-content;
-    width: fit-content;
-    box-shadow: 0 2px 0 rgb(0 0 0 / 40%);
-}
-
-.nav-container {
-    max-width: fit-content;
-    margin: 0 auto;
-    padding: 0 30px;
-}
-
-.navbar .nav-logo {
-    font-size: x-large;
-    font-weight: bold;
-}
-.navbar {
-    display: block;
-    background-color: #3a3d40;
-}
-
-.nav-links {
-    display: flex;
-    margin-right: 2rem;
-}
-
-.nav-links a {
-    display: block;
-    font-size: 2.2rem;
-    padding: 2rem;
-}
-
-.nav-links a :hover {
-    color: black;
-}
-
-div {
-    display: block;
 }
 
 a {
     text-decoration: none;
-    color: white;
 }
 
-ul {
-    display: block;
-    list-style: none;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;
-}
-
-li {
-    display: list-item;
-    text-align: inherit;
-}
-
-/* Welcome */
-.about {
+.navbar {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* If content over reaches sections or divs simply use fit-content... */
-    width: fit-content;
-    height: fit-content;
+    justify-content: space-between;
+    width: 100vw;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: #3a3d40;
+    font-size: 20px;
+}
+
+/* Toggle button */
+
+.navbar_toggle {
+    margin-left: 5%;
+    font-size: 30px;
+    color: #ffffff;
+    background: transparent;
+    border-color: transparent;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    display: none;
+}
+
+
+.logo {
+    margin-left: 5%;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo_header {
+    display: flex;
+    margin-left: 2%;
+}
+
+.main_nav {
+    display: flex;
+    width: 50%;
+    float: right;
+    margin-right: 2%;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.main_nav li {
+    display: inline;
+    color: #ffffff;
+    padding-left: 80px;
+}
+
+.main_nav li a {
+    color: #ffffff;
+}
+
+@media only screen and (max-width : 992px) {
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100vw;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        background-color: #3a3d40;
+        font-size: 20px;
+    }
+
+    .main_nav {
+        display: none;
+    }
+
+    .show_nav {
+        padding-top: 2%;
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .main_nav li {
+        width: 100%;
+        height: 50px;
+        font-size: 25px;
+        justify-content: center;
+        text-align: center;
+        padding: 0%;
+    }
+
+    .navbar_toggle {
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: 30px;
+        color: #ffffff;
+        background: transparent;
+        border-color: transparent;
+        transition: all 0.3s linear;
+        cursor: pointer;
+        display: block;
+    }
+
+    .logo_header {
+        width: 100%;
+        justify-content: space-between;
+        /* maybe center content is better?? */
+        margin-right: 2%;
+    }
+
+}
+
+
+.content {
+    padding: 16px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky+.content {
+    padding-top: 60px;
+}
+/* End of Navigation styling */
+
+/* About content styling */
+.about {
     background-color: black;
     background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
     padding-top: 100px;
+    border: 5px solid white;
+    width: min(100% - 2rem, fit-content);
+    margin-inline: auto;
+    text-align: center;
 }
 
+.about ul{
+    font-size: 3rem;
+    font-weight: 200;
+}
 h1 {
     font-size: 6rem;
     display: block;
@@ -135,13 +182,241 @@ p {
     margin-block-end: 0px;
     padding: 10px 100px 10px 100px;
 }
+/* End of about content styling */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Contact */
+
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    /* Full width */
+    padding: 12px;
+    /* Some padding */
+    border: 1px solid #ccc;
+    /* Gray border */
+    border-radius: 4px;
+    /* Rounded borders */
+    box-sizing: border-box;
+    /* Make sure that padding and width stays in place */
+    margin-top: 6px;
+    /* Add a top margin */
+    margin-bottom: 16px;
+    /* Bottom margin */
+    resize: vertical
+        /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type=reset] {
+    background-color: red;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+    border-radius: 5px;
+    background-color: #3a3d40;
+    opacity: 50;
+    padding: 20px;
+    border: 5px solid white;
+}
+
+form p {
+    text-align: center;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+}
+
+.contact-links {
+    text-align: center;
+}
+
+.contact-details {
+    font-size: 3rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 2px;
+}
+
+i {
+    width: 100px;
+    height: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 60%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: white;
+    display: block;
+}
+
+
+div {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    display: block;
+    list-style: none;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+li {
+    display: list-item;
+    text-align: inherit;
+}
+
 
 /* Projects */
 .project-grid {
-    /* display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    align-items: stretch; */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
@@ -150,11 +425,6 @@ p {
 }
 
 .projects-image {
-    /* box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
-    max-width: 100%;
-    padding: 50px;
-    margin: 25px; */
-
     height: 500px;
     width: 500px;
 }
@@ -196,43 +466,13 @@ p {
     padding: 2rem 2rem;
 }
 
+.project {
+    background-color: #3a3d40;
+    padding-bottom: 100px;
+}
+
 /* End Skills  */
 
-/* Contact */
-.contact {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background-color: black;
-    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
-}
-
-.contact-links {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 980px;
-    margin-top: 4rem;
-    flex-wrap: wrap;
-}
-
-.contact-details {
-    font-size: 3rem;
-}
-
-.btn {
-    display: inline-block;
-    padding: 1rem 2rem;
-    border-radius: 2px;
-}
-
-i {
-    width: 100px;
-    height: 100px;
-}
 
 /* Footer */
 footer {
@@ -247,17 +487,3 @@ footer {
 .last-about {
     padding-bottom: 100px;
 }
-
-.content {
-    padding: 16px;
-  }
-  
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  
-  .sticky + .content {
-    padding-top: 60px;
-  }
