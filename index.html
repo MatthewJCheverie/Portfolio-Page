@@ -17,7 +17,6 @@
 
 <body onscroll="myFunction()">
     <!-- Navigation // Header-->
-    <!-- TODO: make navigation sticky VIA JS -->
     <header>
         <nav id="navbar" class="navbar" onscroll="myFunction()">
                 <div class="logo_header">
@@ -34,29 +33,13 @@
                 </ul>
         </nav>
 
-        <!-- JS Script to create sticky navigation so can have easy site navigation -->
-        <!-- <script>
-            window.onscroll = function () { myFunction() };
-
-            var navbar = document.getElementById("navbar");
-            var sticky = navbar.offsetTop;
-
-            function myFunction() {
-                if (window.pageYOffset >= sticky) {
-                    navbar.classList.add("sticky")
-                } else {
-                    navbar.classList.remove("sticky");
-                }
-            }
-        </script> -->
-
         <script src="JS/responsive-nav.js"></script>
     </header>
 
     <!-- About -->
-    <!-- TODO: style list to match the paragraphs-->
     <section id="about" class="about" id="about-container">
         <h1>Matthew Cheverie</h1>
+        <h2>Web developer</h2>
         <p>I first got into programming in 2013 after a few classes in high school. SInce then i have continue to grow and learn on to complete my 
             Associates as Massasoit Community College in Computer Science. Where i would take classes in:
         </p>    
@@ -80,25 +63,125 @@
             <li>Logic and Computers</li>
         </ul>
         <p>Most recently i have been working as a web intern for Advanced Remarketing Service. Where my primariry roles have been to update or create 
-            JSON-LD Schemas for how-to and faq pages, maintain and uodate containt to match SEO criteria on three wordpress sites
+            JSON-LD Schemas for how-to and faq pages, maintain and uodate containt to match SEO criteria on three wordpress sites: 
+            <a href="http://www.arscars.com/">Advanced Remarketing Services, </a><a href="http://www.youcallwehaul.com/">You Call We Haul, </a>
+            <a href="http://www.cardonationwizard.com/">Car Donation Wizard</a>. Edit and create wordpress themes and plugins with HTML, CSS and PHP. 
+            Track social media and google analytics.
         </p>
     </section>
 
 
-    <!-- Projects -->
-    <section id="project" class="project">
-        <!-- Will have it sorted by langugaes will run small javascript script to create random links upon each click to showcase the different prjects -->
-        <h2 class="skills-header">Most recent projects I have completed</h2>
-        <div class="project-grid">
-            <img class="projects-image" src="IMG/matthew-landing.png" alt="html icon">
-            <img class="projects-image" src="IMG/survey-form.png" alt="css icon">
-            <img class="projects-image" src="IMG/portfolio.png" alt="js icon">
-            <img class="projects-image" src="IMG/matthew-landing.png" alt="html icon">
-            <img class="projects-image" src="IMG/survey-form.png" alt="css icon">
-            <img class="projects-image" src="IMG/portfolio.png" alt="js icon">
-        </div>
-    </section>
-    <!-- End Projects -->
+<!-- START PROJECTS SECTION -->
+
+<section id="projects" class="projects-section">
+    <h2 class="projects-section-header">These are some of my projects</h2>
+
+    <div class="projects-grid">
+      <a
+        href="https://codepen.io/freeCodeCamp/full/zNqgVx"
+        target="_blank"
+        class="project project-tile"
+      >
+        <img
+          class="project-image"
+          src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tribute.jpg"
+          alt="project"
+        />
+        <p class="project-title">
+          <span class="code">&lt;</span>
+          Tribute Page
+          <span class="code">&#47;&gt;</span>
+        </p>
+      </a>
+      <a
+        href="https://codepen.io/freeCodeCamp/full/qRZeGZ"
+        target="_blank"
+        class="project project-tile"
+      >
+        <img
+          class="project-image"
+          src="https://cdn.freecodecamp.org/testable-projects-fcc/images/random-quote-machine.png"
+          alt="project"
+        />
+        <p class="project-title">
+          <span class="code">&lt;</span>
+          Random Quote Machine
+          <span class="code">&#47;&gt;</span>
+        </p>
+      </a>
+      <a
+        href="https://codepen.io/freeCodeCamp/full/wgGVVX"
+        target="_blank"
+        class="project project-tile"
+      >
+        <img
+          class="project-image"
+          src="https://cdn.freecodecamp.org/testable-projects-fcc/images/calc.png"
+          alt="project"
+        />
+        <p class="project-title">
+          <span class="code">&lt;</span>
+          JavaScript Calculator
+          <span class="code">&#47;&gt;</span>
+        </p>
+      </a>
+      <a
+        href="https://codepen.io/freeCodeCamp/full/mVEJag"
+        target="_blank"
+        class="project project-tile"
+      >
+        <img
+          class="project-image"
+          src="https://cdn.freecodecamp.org/testable-projects-fcc/images/map.jpg"
+          alt="project"
+        />
+        <p class="project-title">
+          <span class="code">&lt;</span>
+          Map Data Across the Globe
+          <span class="code">&#47;&gt;</span>
+        </p>
+      </a>
+      <a
+        href="https://codepen.io/freeCodeCamp/full/wGqEga"
+        target="_blank"
+        class="project project-tile"
+      >
+        <img
+          class="project-image"
+          src="https://cdn.freecodecamp.org/testable-projects-fcc/images/wiki.png"
+          alt="project"
+        />
+        <p class="project-title">
+          <span class="code">&lt;</span>
+          Wikipedia Viewer
+          <span class="code">&#47;&gt;</span>
+        </p>
+      </a>
+      <a
+        href="https://codepen.io/freeCodeCamp/full/KzXQgy"
+        target="_blank"
+        class="project project-tile"
+      >
+        <img
+          class="project-image"
+          src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tic-tac-toe.png"
+          alt="project"
+        />
+        <p class="project-title">
+          <span class="code">&lt;</span>
+          Tic Tac Toe Game
+          <span class="code">&#47;&gt;</span>
+        </p>
+      </a>
+    </div>
+
+    <a
+      href="https://codepen.io/FreeCodeCamp/"
+      class="btn btn-show-all"
+      target="_blank"
+      >Show all<i class="fas fa-chevron-right"></i
+    ></a>
+  </section>
 
     <!-- Contact -->
     <!-- TODO: Create a mock form just to showcase -->
@@ -108,16 +191,7 @@
             <form method="post">
                 <h2>Contact Me:</h2>
               <p>Please know this form does not work icone links below do however work so do with that what you want but i just wanted to show a form man...</p>  
-              <div class="contact-links">
-                <a id="profile-link" href="https://github.com/MatthewJCheverie" target="_blank"
-                    class="btn contact-details"><i class="fa-brands fa-github"></i></a>
-                <a id="profile-link" href="https://www.linkedin.com/in/matthew-cheverie-b55231244/" target="_blank"
-                    class="btn contact-details"><i class="fa-brands fa-linkedin"> </i></a>
-                <a href="mailto:matthewjohncheverie@gmail.com" class="btn contact-details"><i
-                        class="fa-solid fa-at"></i></a>
-                <a href="tel:508-279-5966" class="btn contact-details"><i class="fa-solid fa-square-phone"></i></a>
-            </div>
-          
+              
               <label for="fname">First Name</label>
               <input type="text" id="fname" name="firstname" placeholder="Your name..">
           
@@ -138,9 +212,13 @@
               <input type="reset" value="Reset">
             </form>
           </div>
+    </section>
+    <!-- End Contact -->
 
-        <!-- Contact Links (Github, LinkedIn, Phone, Email) -->
-        <!-- <div class="contact-links">
+    <!-- Footer -->
+    <footer>
+        <p>Thank you for scrolling through this website &copy;2022</p>
+        <div class="contact-links">
             <a id="profile-link" href="https://github.com/MatthewJCheverie" target="_blank"
                 class="btn contact-details"><i class="fa-brands fa-github"></i></a>
             <a id="profile-link" href="https://www.linkedin.com/in/matthew-cheverie-b55231244/" target="_blank"
@@ -148,13 +226,8 @@
             <a href="mailto:matthewjohncheverie@gmail.com" class="btn contact-details"><i
                     class="fa-solid fa-at"></i></a>
             <a href="tel:508-279-5966" class="btn contact-details"><i class="fa-solid fa-square-phone"></i></a>
-        </div> -->
-    </section>
-    <!-- End Contact -->
-
-    <!-- Footer -->
-    <footer>
-        <p>Thank you for scrolling through this website &copy;2022</p>
+        </div>
+      
     </footer>
     <!-- End Footer -->
 </body>
