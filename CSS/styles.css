@@ -441,7 +441,7 @@ html {
  /* Navigation */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 100%;
     padding-top: 2%;
     padding-bottom: 2%;
