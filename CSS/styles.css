@@ -445,7 +445,7 @@ html {
     width: 100%;
     padding-top: 2%;
     padding-bottom: 2%;
-    background-color: #3a3d40;
+    background-color: var(--main-gray);
     font-size: 20px;
 }
 
@@ -504,7 +504,7 @@ html {
         width: 100vw;
         padding-top: 2%;
         padding-bottom: 2%;
-        background-color: #3a3d40;
+        background-color: var(--main-gray);
         font-size: 20px;
     }
 
@@ -723,7 +723,7 @@ input[type=submit]:hover {
 /* Add a background color and some padding around the form */
 .container {
     border-radius: 5px;
-    background-color: #3a3d40;
+    background-color: var(--main-gray);
     opacity: 50;
     padding: 20px;
     border: 5px solid white;
@@ -771,7 +771,7 @@ i {
 .projects-section {
   text-align: center;
   padding: 10rem 2rem;
-  background: var(--main-blue);
+  background: var(--main-gray);
 }
 
 .projects-section-header {
@@ -808,7 +808,7 @@ i {
 }
 
 .project {
-  background: var(--main-gray);
+  background: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   border-radius: 2px;
 }
@@ -869,7 +869,7 @@ footer {
   justify-content: space-evenly;
   padding: 2rem;
   background: var(--main-gray);
-  border-top: 4px solid var(--main-red);
+  border-top: 4px solid white;
 }
 
 footer > p {
