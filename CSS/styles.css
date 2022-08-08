@@ -1,9 +1,58 @@
 /* Custom properties/variables  */
 :root {
   --main-white: #f0f0f0;
-  --main-red: #be3144;
+  --main-bg: ;
+  --secondary-bg: rgb(190, 190, 190);
   --main-blue: #45567d;
-  --main-gray: #303841;
+  --main-bg: #9e9fa0;
+}
+
+
+
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(200, 200, 200);
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: -25px;
+  color: black;
+}
+
+td,
+th {
+  border: 1px solid rgb(190, 190, 190);
+  padding: 10px 20px;
+}
+
+th {
+  background-color: rgb(235, 235, 235);
+}
+
+td {
+  text-align: center;
+}
+
+tr:nth-child(even) td {
+  background-color: rgb(250, 250, 250);
+}
+
+tr:nth-child(odd) td {
+  background-color: rgb(245, 245, 245);
+}
+
+caption {
+  padding: 10px;
+}
+
+
+
+/* Custom properties/variables */
+:root {
+  --text-color: white;
 }
 
 /* Base reset */
@@ -12,7 +61,8 @@
   padding: 0;
 }
 
-/* box-sizing and font sizing */
+/* Box-sizing and font sizing */
+
 *,
 *::before,
 *::after {
@@ -21,29 +71,11 @@
 
 html {
   box-sizing: border-box;
-
-  /* Set font size for easy rem calculations
-   * default document font size = 16px, 1rem = 16px, 100% = 16px
-   * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
-  */
   font-size: 62.5%;
   scroll-behavior: smooth;
 }
 
-/* A few media query to set some font sizes at different screen sizes.
- * This helps automate a bit of responsiveness.
- * The trick is to use the rem unit for size values, margin and padding.
- * Because rem is relative to the document font size
- * when we scale up or down the font size on the document
- * it will affect all properties using rem units for the values.
-*/
-
-/* I am using the em unit for breakpoints
- * The calculation is the following
- * screen size divided by browser base font size
- * As an example: a breakpoint at 980px
- * 980px / 16px = 61.25em
-*/
+/* media queries for font size */
 
 /* 1200px / 16px = 75em */
 @media (max-width: 75em) {
@@ -67,10 +99,10 @@ html {
 }
 
 /* Base styles */
-
 body {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.8rem; /* 18px */
+  font-size: 1.8rem;
+  /* 18px */
   font-weight: 400;
   line-height: 1.4;
   color: var(--main-white);
@@ -105,498 +137,188 @@ img {
   width: 100%;
 }
 
-/* nav */
-
-.nav {
+/* Navigation */
+.navbar {
   display: flex;
   justify-content: flex-end;
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  background: var(--main-red);
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
-  z-index: 10;
-}
-
-.nav-list {
-  display: flex;
-  margin-right: 2rem;
-}
-
-@media (max-width: 28.75em) {
-  .nav {
-    justify-content: center;
-  }
-
-  .nav-list {
-    margin: 0 1rem;
-  }
-}
-
-.nav-list a {
-  display: block;
-  font-size: 2.2rem;
-  padding: 2rem;
-}
-
-.nav-list a:hover {
-  background: var(--main-blue);
-}
-
-/* Welcome section */
-
-.welcome-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  background-color: #000;
-  background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
-}
-
-.welcome-section > p {
-  font-size: 3rem;
-  font-weight: 200;
-  font-style: italic;
-  color: var(--main-red);
-}
-
-/* Projects section */
-
-.projects-section {
-  text-align: center;
-  padding: 10rem 2rem;
-  background: var(--main-blue);
-}
-
-.projects-section-header {
-  max-width: 640px;
-  margin: 0 auto 6rem auto;
-  border-bottom: 0.2rem solid var(--main-white);
-}
-
-@media (max-width: 28.75em) {
-  .projects-section-header {
-    font-size: 4rem;
-  }
-}
-
-/* "Automagic" image grid using no media queries */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 4rem;
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  margin-bottom: 6rem;
-}
-
-@media (max-width: 30.625em) {
-  .projects-section {
-    padding: 6rem 1rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.project {
-  background: var(--main-gray);
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  border-radius: 2px;
-}
-
-.code {
-  color: var(--main-gray);
-  transition: color 0.3s ease-out;
-}
-
-.project:hover .code {
-  color: #ff7f50;
-}
-
-.project-image {
-  height: calc(100% - 6.8rem);
-  width: 100%;
-  object-fit: cover;
-}
-
-.project-title {
-  font-size: 2rem;
-  padding: 2rem 0.5rem;
-}
-
-.btn {
-  display: inline-block;
-  padding: 1rem 2rem;
-  border-radius: 2px;
-}
-
-/* Projects section */
-/* Contact section */
-
-.contact-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  height: 80vh;
-  padding: 0 2rem;
-  background: var(--main-gray);
-}
-
-.contact-section-header > h2 {
-  font-size: 6rem;
-}
-
-@media (max-width: 28.75em) {
-  .contact-section-header > h2 {
-    font-size: 4rem;
-  }
-}
-
-.contact-section-header > p {
-  font-style: italic;
-}
-
-.contact-links {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  max-width: 980px;
-  margin-top: 4rem;
-  flex-wrap: wrap;
-}
-
-.contact-details {
-  font-size: 2.4rem;
-  text-shadow: 2px 2px 1px #1f1f1f;
-  transition: transform 0.3s ease-out;
-}
-
-.contact-details:hover {
-  transform: translateY(8px);
-}
-
-/* Footer */
-
-footer {
-  font-weight: 300;
-  display: flex;
-  justify-content: space-evenly;
-  padding: 2rem;
-  background: var(--main-gray);
-  border-top: 4px solid var(--main-red);
-}
-
-footer > p {
-  margin: 2rem;
-}
-
-footer i {
-  vertical-align: middle;
-}
-
-@media (max-width: 28.75em) {
-  footer {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Custom properties/variables */
-:root {
-    --text-color: white;
-}
-
-/* Base reset */
-* {
-    margin: 0;
-    padding: 0;
-}
-
-/* Box-sizing and font sizing */
-
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-}
-
-html {
-    box-sizing: border-box;
-    font-size: 62.5%;
-    scroll-behavior: smooth;
-}
-
-/* media queries for font size */
-
-/* 1200px / 16px = 75em */
-@media (max-width: 75em) {
-    html {
-      font-size: 60%;
-    }
-  }
-  
-  /* 980px / 16px = 61.25em */
-  @media (max-width: 61.25em) {
-    html {
-      font-size: 58%;
-    }
-  }
-  
-  /* 460px / 16px = 28.75em */
-  @media (max-width: 28.75em) {
-    html {
-      font-size: 55%;
-    }
-  }
-  
-  /* Base styles */
-  body {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.8rem; /* 18px */
-    font-weight: 400;
-    line-height: 1.4;
-    color: var(--main-white);
-  }
-  
-  h1,
-  h2 {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    text-align: center;
-  }
-  
-  h1 {
-    font-size: 6rem;
-  }
-  
-  h2 {
-    font-size: 4.2rem;
-  }
-  
-  ul {
-    list-style: none;
-  }
-  
-  a {
-    text-decoration: none;
-    color: var(--main-white);
-  }
-  
-  img {
-    display: block;
-    width: 100%;
-  }
-
- /* Navigation */
-.navbar {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    background-color: var(--main-gray);
-    font-size: 20px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background-color: var(--main-bg);
+  font-size: 20px;
 }
 
 /* Toggle button */
 
 .navbar_toggle {
+  margin-left: 5%;
+  font-size: 30px;
+  color: #ffffff;
+  background: transparent;
+  border-color: transparent;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  display: none;
+}
+
+
+.logo {
+  margin-left: 5%;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.logo_header {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 2%;
+}
+
+.main_nav {
+  display: flex;
+  width: 50%;
+  float: right;
+  margin-right: 2%;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+.main_nav li {
+  display: inline;
+  color: #ffffff;
+  padding-left: 80px;
+}
+
+.main_nav li a {
+  color: #ffffff;
+}
+
+@media only screen and (max-width : 992px) {
+
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100vw;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: var(--main-gray);
+    font-size: 20px;
+  }
+
+  .main_nav {
+    display: none;
+  }
+
+  .show_nav {
+    padding-top: 2%;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .main_nav li {
+    width: 100%;
+    height: 50px;
+    font-size: 25px;
+    justify-content: center;
+    text-align: center;
+    padding: 0%;
+  }
+
+  .navbar_toggle {
     margin-left: 5%;
+    margin-right: 5%;
     font-size: 30px;
     color: #ffffff;
     background: transparent;
     border-color: transparent;
     transition: all 0.3s linear;
     cursor: pointer;
-    display: none;
-}
+    display: block;
+  }
 
-
-.logo {
-    margin-left: 5%;
-    color: #ffffff;
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.logo_header {
-    display: flex;
-    justify-content: space-evenly;
-    margin-left: 2%;
-}
-
-.main_nav {
-    display: flex;
-    width: 50%;
-    float: right;
+  .logo_header {
+    width: 100%;
+    justify-content: center;
     margin-right: 2%;
-    justify-content: flex-end;
-    list-style: none;
-}
-
-.main_nav li {
-    display: inline;
-    color: #ffffff;
-    padding-left: 80px;
-}
-
-.main_nav li a {
-    color: #ffffff;
-}
-
-@media only screen and (max-width : 992px) {
-
-    .navbar {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 100vw;
-        padding-top: 2%;
-        padding-bottom: 2%;
-        background-color: var(--main-gray);
-        font-size: 20px;
-    }
-
-    .main_nav {
-        display: none;
-    }
-
-    .show_nav {
-        padding-top: 2%;
-        display: flex;
-        width: 100vw;
-        height: 100vh;
-        flex-direction: column;
-        justify-content: flex-start;
-    }
-
-    .main_nav li {
-        width: 100%;
-        height: 50px;
-        font-size: 25px;
-        justify-content: center;
-        text-align: center;
-        padding: 0%;
-    }
-
-    .navbar_toggle {
-        margin-left: 5%;
-        margin-right: 5%;
-        font-size: 30px;
-        color: #ffffff;
-        background: transparent;
-        border-color: transparent;
-        transition: all 0.3s linear;
-        cursor: pointer;
-        display: block;
-    }
-
-    .logo_header {
-        width: 100%;
-        justify-content: center;
-        margin-right: 2%;
-    }
+  }
 
 }
 
 
 .content {
-    padding: 16px;
+  padding: 16px;
 }
 
 .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .sticky+.content {
-    padding-top: 60px;
+  padding-top: 60px;
 }
+
 /* End of Navigation styling */
 
 
 
 /* About content styling */
 .about {
-    background-color: black;
-    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
-    padding-top: 100px;
-    border: 5px solid white;
-    width: min(100% - 2rem, fit-content);
-    margin-inline: auto;
-    text-align: center;
-    padding-bottom: 100px;
+  background-color: black;
+  background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+  padding-top: 100px;
+  border: 5px solid white;
+  width: min(100% - 2rem, fit-content);
+  margin-inline: auto;
+  text-align: center;
+  padding-bottom: 100px;
 }
 
-.about ul{
-    font-size: 3rem;
-    font-weight: 200;
+.about ul {
+  font-size: 3rem;
+  font-weight: 200;
 }
+
 h1 {
-    font-size: 6rem;
-    display: block;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-    padding-top: 20px;
+  font-size: 6rem;
+  display: block;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-top: 20px;
 }
 
 h2 {
-    font-size: 4.2rem;
+  font-size: 4.2rem;
 }
 
 h1,
 h2 {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  text-align: center;
 }
 
 .about>p {
-    font-size: 3rem;
-    font-weight: 200;
-    font-style: italic;
+  font-size: 3rem;
+  font-weight: 200;
+  font-style: italic;
 }
 
 p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-block-end: 0px;
-    padding: 10px 100px 10px 100px;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-block-end: 0px;
+  padding: 10px 100px 10px 100px;
 }
+
 /* End of about content styling */
 
 
@@ -616,17 +338,17 @@ p {
   background: var(--main-gray);
 }
 
-.contact-section-header > h2 {
+.contact-section-header>h2 {
   font-size: 6rem;
 }
 
 @media (max-width: 28.75em) {
-  .contact-section-header > h2 {
+  .contact-section-header>h2 {
     font-size: 4rem;
   }
 }
 
-.contact-section-header > p {
+.contact-section-header>p {
   font-style: italic;
 }
 
@@ -656,92 +378,92 @@ p {
 input[type=text],
 select,
 textarea {
-    width: 100%;
-    /* Full width */
-    padding: 12px;
-    /* Some padding */
-    border: 1px solid #ccc;
-    /* Gray border */
-    border-radius: 4px;
-    /* Rounded borders */
-    box-sizing: border-box;
-    /* Make sure that padding and width stays in place */
-    margin-top: 6px;
-    /* Add a top margin */
-    margin-bottom: 16px;
-    /* Bottom margin */
-    resize: vertical
-        /* Allow the user to vertically resize the textarea (not horizontally) */
+  width: 100%;
+  /* Full width */
+  padding: 12px;
+  /* Some padding */
+  border: 1px solid #ccc;
+  /* Gray border */
+  border-radius: 4px;
+  /* Rounded borders */
+  box-sizing: border-box;
+  /* Make sure that padding and width stays in place */
+  margin-top: 6px;
+  /* Add a top margin */
+  margin-bottom: 16px;
+  /* Bottom margin */
+  resize: vertical
+    /* Allow the user to vertically resize the textarea (not horizontally) */
 }
 
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
-    background-color: #04AA6D;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
 }
 
 input[type=reset] {
-    background-color: red;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
+  background-color: red;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
 }
 
 /* When moving the mouse over the submit button, add a darker green color */
 input[type=submit]:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
 /* Add a background color and some padding around the form */
 .container {
-    border-radius: 5px;
-    background-color: var(--main-gray);
-    opacity: 50;
-    padding: 20px;
-    border: 5px solid white;
+  border-radius: 5px;
+  background-color: var(--main-gray);
+  opacity: 50;
+  padding: 20px;
+  border: 5px solid white;
 }
 
 form p {
-    text-align: center;
+  text-align: center;
 }
 
 .contact {
-    /* display: flex;
+  /* display: flex;
     flex-direction: column;
     justify-content: center; */
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background-color: black;
-    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
-    padding: 100px 20px 1000px 20px;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+  padding: 100px 20px 1000px 20px;
 }
 
 .contact-links {
-    text-align: center;
+  text-align: center;
 }
 
 .contact-details {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 .btn {
-    display: inline-block;
-    padding: 1rem 2rem;
-    border-radius: 2px;
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 2px;
 }
 
 i {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 
@@ -829,11 +551,11 @@ i {
   background: var(--main-red);
 }
 
-.btn-show-all:hover > i {
+.btn-show-all:hover>i {
   transform: translateX(2px);
 }
 
-.btn-show-all > i {
+.btn-show-all>i {
   margin-left: 10px;
   transform: translateX(0);
   transition: transform 0.3s ease-out;
@@ -852,7 +574,7 @@ footer {
   border-top: 4px solid white;
 }
 
-footer > p {
+footer>p {
   margin: 2rem;
 }
 
@@ -866,8 +588,3 @@ footer i {
     text-align: center;
   }
 }
-
-
-
-
-
